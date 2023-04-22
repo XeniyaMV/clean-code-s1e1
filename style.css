@@ -11,7 +11,9 @@
   display: block;
   text-align: right;
 }
-
+.figure {
+  margin: 0px;
+}
 .header-img {
   width: 100%;
 }
@@ -103,6 +105,10 @@
 }
 
 /* New Task */
+#adding-item {
+  padding-bottom: 20px;
+}
+
 #adding-item .section-title {
   display: block;
   margin: 0 0 20px;
