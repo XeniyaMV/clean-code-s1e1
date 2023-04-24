@@ -11,14 +11,14 @@
   display: block;
   text-align: right;
 }
-.figure {
+.header-figure {
   margin: 0px;
 }
-.header-img {
+.header-figure__img {
   width: 100%;
 }
 
-.more-inf {
+.header-figure__more-inf {
   font-family: fantasy, cursive;
 }
 
@@ -36,14 +36,10 @@
   margin: 0 auto 0;
 }
 
-.task {
+.task-item__task {
   width: 56%;
   display: inline-block;
   flex-grow: 1;
-}
-
-.task-row {
-  display: flex;
 }
 
 .list {
@@ -51,13 +47,13 @@
   padding: 0px;
 }
 
-.item,
-.section-title {
+.task-item,
+.section__title {
   list-style: none;
 }
 
-.text,
-.checkbox,
+.task-item__task_text,
+.task-item__checkbox,
 .button {
   outline: none;
 }
@@ -77,7 +73,7 @@
 }
 
 /* Heading */
-.section-title {
+.section__title {
   color: #333;
   font-weight: 700;
   font-size: 15px;
@@ -87,7 +83,7 @@
   text-transform: uppercase;
 }
 
-.text {
+.task-item__task_text {
   margin: 0;
   font-size: 18px;
   line-height: 18px;
@@ -100,26 +96,13 @@
   color: #888;
 }
 
-.text:focus {
+.task-item__task_text:focus {
   color: #333;
 }
 
-/* New Task */
-#adding-item {
-  padding-bottom: 20px;
-}
-
-#adding-item .section-title {
-  display: block;
-  margin: 0 0 20px;
-}
-
-#new-task {
-  width: 318px;
-}
 
 /* Task list */
-.item {
+.task-item {
   overflow: hidden;
   padding: 20px 0;
   border-bottom: 1px solid #eee;
@@ -128,51 +111,60 @@
   align-items: center;
 }
 
-.item > * {
+.task-item_adding-mode {
+  border-bottom: 0px;
+}
+
+.task-item > * {
   vertical-align: middle;
 }
 
-.item > .checkbox {
+.task-item > .task-item__checkbox {
   margin: 0 10px;
 }
 
-.item > .name {
+.task-item > .task-item__task_label {
   padding-left: 10px;
   box-sizing: border-box;
   font-size: 18px;
   width: 226px;
 }
 
-.item > .text {
+.task-item > .task-item__task_text {
   width: 226px;
 }
 
-.delete .icon {
+.button_delete .icon {
   height: 2em;
   transform: rotateZ(45deg);
   transition: transform 200ms ease-in;
 }
 
-.delete .icon:hover {
+.button_delete .icon:hover {
   transform: rotateZ(0);
 }
 
 /* Completed */
-#completed-tasks .name {
+.list_completed-tasks .task-item__task_label {
   text-decoration: line-through;
   color: #888;
 }
 
 /* Edit Task */
-.item .text {
+.task-item .task-item__task_text {
   display: none;
 }
 
-.edit-mode .text {
+.task-item_edit-mode .task-item__task_text {
   display: inline-block;
   width: 224px;
 }
 
-.edit-mode .name {
+.task-item_edit-mode .task-item__task_label {
   display: none;
+}
+
+.task-item .task-item__task_new-task {
+  display: inline-block;
+  width: 318px;
 }
